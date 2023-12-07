@@ -12,6 +12,18 @@ package ru.pjanov;
  */
 public class Main {
     public static void main(String[] args) {
+        Student student = new Student("Иванов", 20, 4.5);
 
+        student.serializeStudent(student, "student.bin");
+        Student deserializedStudent = student.deserializeStudent("student.bin");
+        student.printStudentDetails(deserializedStudent);
+
+        /*
+         * Значение GPA не было сохранено и восстановлено, потому что оно было объявлено как transient,
+         * которое используется для того, чтобы исключить поле из процесса сериализации.
+         * В данном случае мы используем transient для GPA, предполагая,
+         * что средний балл может быть вычисляемым или изменяемым свойством,
+         * которое не требуется сохранять.
+         */
     }
 }
