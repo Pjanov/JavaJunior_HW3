@@ -1,5 +1,7 @@
 package ru.pjanov;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 import java.io.*;
 
 /**
@@ -28,6 +30,9 @@ public class Student implements Serializable {
         this.name = name;
         this.age = age;
         this.GPA = GPA;
+    }
+
+    public Student() {
     }
 
     // endregion
@@ -77,5 +82,45 @@ public class Student implements Serializable {
         System.out.println("Средний балл студента: " + student.GPA);
     }
 
+    // endregion
+
+    // region Геттеры и Сеттеры
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public int getAge() {
+        return age;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
+    }
+
+    public double getGPA() {
+        return GPA;
+    }
+
+    public void setGPA(double GPA) {
+        this.GPA = GPA;
+    }
+
+
+    // endregion
+
+    // region toString()
+    @Override
+    public String toString() {
+        return "Student{" +
+                "name='" + name + '\'' +
+                ", age=" + age +
+                ", GPA=" + GPA +
+                '}';
+    }
     // endregion
 }
