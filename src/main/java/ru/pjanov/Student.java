@@ -1,6 +1,5 @@
 package ru.pjanov;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import java.io.*;
 
